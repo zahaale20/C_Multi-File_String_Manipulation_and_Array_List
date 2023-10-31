@@ -31,27 +31,29 @@ array_list *array_list_new(size_t cap){
     return list;
 }
 
-void array_list_add_to_end(array_list *list, char *input){
-    // list and input error handling
-    if (list == NULL || input == NULL){
+
+void array_list_add_to_end(array_list *list, char *input) {
+    // error handling
+    if (list == NULL || input == NULL) {
         fprintf(stderr, "Error: Invalid list or input.");
         return;
     }
 
-    // reallocate array to be able to hold the additional element
-    char **temp = (char **)realloc(list->elements, sizeof(char *) * (list->capacity + 1));
+    // If the length is equal to or greater than the capacity, reallocate memory by doubling capacity
+    if (list->length >= list->capacity) {
+        list->capacity = (list->capacity == 0) ? 1 : list->capacity * 2;
 
-    // reallocation error handling
-    if (temp == NULL){
-        fprintf(stderr, "Error: Reallocating memory for new array list.");
-        return;
+        char **temp = (char **)realloc(list->elements, sizeof(char *) * list->capacity);
+
+        if (temp == NULL) {
+            fprintf(stderr, "Error: Reallocating memory for new array list.");
+            return;
+        }
+
+        list->elements = temp;
     }
 
-    // add input to elements array now that the list has been reallocated
-    list->elements = temp;
+    // Add the input to the array and increase the length.
     list->elements[list->length] = input;
-
-    // increase capacity and length to reflect the change
-    list->capacity++;
     list->length++;
 }
