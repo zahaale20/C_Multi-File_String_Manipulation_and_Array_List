@@ -25,3 +25,17 @@ array_list *array_list_new(size_t cap){
 
     return list;
 }
+
+void array_list_add_to_end(array_list * list, const char *input){
+    if (list == NULL){
+        fprintf(stderror, "Error: Locating array.");
+        return NULL;
+    }
+
+    if (input == NULL){
+        fprintf(stderror, "Error: Locating string to add to end of array list.");
+        return NULL;
+    }
+
+    
+}
