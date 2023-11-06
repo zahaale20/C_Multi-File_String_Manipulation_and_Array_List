@@ -13,19 +13,19 @@ array_list *array_list_new(size_t cap){
     }
 
     // allocate space for elements of array list
-    list->elements = (char **)malloc(cap * sizeof(char *));
+    list -> elements = (char **)malloc(cap * sizeof(char *));
     
     // error handling
-    if (list->elements == NULL){
+    if (list -> elements == NULL){
         fprintf(stderr, "Error: Allocating memory for array elements.");
         return NULL;
     }
 
     // set capacity
-    list->capacity = cap;
+    list -> capacity = cap;
     
     //set length of array
-    list->length = 0;
+    list -> length = 0;
 
     // return it
     return list;
