@@ -1,18 +1,18 @@
 CC = gcc
 CFLAGS = -Wall -std=c99 -pedantic
-MAIN = array_list_tests
-OBJS = array_list_tests.o array_list.o
+MAIN = task2_tests
+OBJS = task2_tests.o task2.o
 
 all : $(MAIN)
 
-$(MAIN) : $(OBJS) array_list.h
+$(MAIN) : $(OBJS) task2.h
 	$(CC) $(CFLAGS) -o $(MAIN) $(OBJS)
 
-array_list_tests.o : array_list_tests.c array_list.h
-	$(CC) $(CFLAGS) -c array_list_tests.c
+task2_tests.o : task2_tests.c task2.h
+	$(CC) $(CFLAGS) -c task2_tests.c
 
-array_list.o : array_list.c array_list.h
-	$(CC) $(CFLAGS) -c array_list.c
+task2.o : task2.c task2.h
+	$(CC) $(CFLAGS) -c task2.c
 
 clean :
 	rm *.o $(MAIN) core
