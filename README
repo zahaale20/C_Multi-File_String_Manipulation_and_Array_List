@@ -4,12 +4,12 @@ To compile task 1:
 
 To run task 1:
 
-    ./task1
+    ./task1_tests
 
 To compile task 2:
 
-    gcc -Wall -std=c99 -pedantic task2.c task2_tests.c -o task2
+    make
 
 To run task 2:
 
-    ./task2
+    ./task2_tests
