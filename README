@@ -11,7 +11,7 @@ String Manipulation Across Multiple Files (Task1): This part of the project emph
 - Dynamic Data Structure Creation: Created an array_list_new function for dynamic allocation of a new array list structure, effectively managing its capacity and length.
 - Resizable Array Functionality: Implemented array_list_add_to_end to add elements to the array list and resize the underlying array as necessary, demonstrating adept use of realloc.
 - Makefile Mastery: Employed a Makefile for compilation, showcasing an understanding of its role in streamlining the build process.
--Comprehensive Testing: Wrote extensive tests to validate the functionality of the array list, particularly in scenarios requiring the resizing of the array.
+- Comprehensive Testing: Wrote extensive tests to validate the functionality of the array list, particularly in scenarios requiring the resizing of the array.
 
 
 To compile task 1:
